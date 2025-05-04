@@ -19,10 +19,9 @@
 					class="rounded campaign-cover-image" alt="Cover de la campaña"
 				/>
 			</div>-->
-			<pre></pre>
 			<nuxt-page />
 		</main>
-		<pre>{{ project }}}</pre>
+<!--		<pre>{{ project }}}</pre>-->
 	</section>
 </template>
 

@@ -2,16 +2,7 @@
 	<div class="custom-select">
 		<select @change="navigateToSection" v-model="currentSection">
 			<option value="overview">Overview</option>
-			<option value="brief">Brief</option>
-			<option value="market-analysis">Análisis de Mercado</option>
-			<option value="target-audience">Público Objetivo</option>
-			<option value="strategy">Estrategia</option>
-			<option value="creative-suite">Suite Creativa</option>
-			<option value="channel-plan">Plan de Canales</option>
-			<option value="execution-assets">Recursos de Ejecución</option>
-			<option value="budget-outline">Esquema de Presupuesto</option>
-			<option value="roadmap-timeline">Cronograma</option>
-			<option value="kpi-framework">Marco de KPIs</option>
+
 		</select>
 	</div>
 </template>
