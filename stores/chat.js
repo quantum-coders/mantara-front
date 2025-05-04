@@ -7,7 +7,7 @@ export const useChat = defineStore('chat', () => {
 	const wisMessage = ref(null);
 	const chat = ref(null);
 	const thread = ref(null);
-	const campaignStore = useCampaign();
+	const projectStore = useProject();
 	/**
 	 * Initializes the chat for a specific entity and entity ID.
 	 * Fetches the chat and thread data from the server and sets up the chat store.
@@ -167,10 +167,10 @@ export const useChat = defineStore('chat', () => {
 							if(jsonData.data && jsonData.data.name) {
 								thread.value.messages[index].toolResults[jsonData.data.name] = jsonData.data.result;
 							}
-						} else if(jsonData.type === 'campaign' && jsonData.data) {
+						} else if(jsonData.type === 'project' && jsonData.data) {
 							// ——> aquí actualizas la campaña
 							// ejemplo con Pinia:
-							campaignStore.campaign = jsonData.data;
+							projectStore.project = jsonData.data;
 
 							console.log('🏷️ Campaña actualizada:', jsonData.data);
 						} else if(jsonData.type === 'openai') {

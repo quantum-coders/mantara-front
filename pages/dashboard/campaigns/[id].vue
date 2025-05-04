@@ -19,21 +19,22 @@
 					class="rounded campaign-cover-image" alt="Cover de la campaña"
 				/>
 			</div>-->
+			<pre></pre>
 			<nuxt-page />
 		</main>
-<!--		<pre>{{ campaign }}}</pre>-->
+		<pre>{{ project }}}</pre>
 	</section>
 </template>
 
 <script setup>
 	import { storeToRefs } from 'pinia';
-	const storeCampaign = useCampaign();
-	const { campaign } = storeToRefs(storeCampaign);
+	const storeProject = useProject();
+	const { project } = storeToRefs(storeProject);
 	const loading = ref(false);
 
 	onMounted(async () => {
 		loading.value = true;
-		await storeCampaign.fetchCampaign(useRoute().params.id);
+		await storeProject.fetchProject(useRoute().params.id);
 		loading.value = false;
 	});
 
