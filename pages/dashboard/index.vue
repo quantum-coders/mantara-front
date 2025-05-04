@@ -6,7 +6,7 @@
 				class="btn btn-sm btn-primary"
 				@click.prevent="openNewCampaignDialog"
 			>
-				Crear nueva campaña
+				Crear nuevo proyecto
 			</a>
 		</template>
 	</platform-title>

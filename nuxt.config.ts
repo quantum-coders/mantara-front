@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
-			title: 'MIA',
+			title: 'Mantara',
 			link: [
 				{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
 			],

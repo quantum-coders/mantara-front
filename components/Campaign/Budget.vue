@@ -279,7 +279,7 @@
 
 			// Hacer la petición al servidor para actualizar
 			const { data, error } = await useBaseFetch(
-				`/users/me/campaigns/${ route.params.id }/budget-outline`,
+				`/users/me/projects/${ route.params.id }/budget-outline`,
 				{
 					method: 'PUT',
 					body: budgetOutlineData,

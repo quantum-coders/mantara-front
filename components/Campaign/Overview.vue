@@ -102,7 +102,7 @@
 			<template #default="{ close }">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Editar Campaña</h5>
+						<h5 class="modal-title">Editar Proyecto</h5>
 						<button type="button" class="btn-close" @click="close" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -235,7 +235,7 @@
 
 			// Llamada a la API para actualizar la campaña
 			const { data, error } = await useBaseFetch(
-				`/users/me/campaigns/${ route.params.id }`,
+				`/users/me/projects/${ route.params.id }`,
 				{
 					method: 'PUT',
 					body: campaignData,
@@ -254,7 +254,7 @@
 			};
 
 			// Mostrar mensaje de éxito
-			usePrettyToast().successToast('Campaña actualizada correctamente');
+			usePrettyToast().successToast('Proyecto actualizada correctamente');
 
 			// Cerrar el diálogo
 			if(closeDialog) {

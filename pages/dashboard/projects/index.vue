@@ -8,7 +8,7 @@
 				<template v-for="c in campaigns" :key="c.id">
 					<div class="col-4">
 						<router-link
-							:to="`/dashboard/campaigns/${c.id}`"
+							:to="`/dashboard/projects/${c.id}`"
 							custom
 							v-slot="{ navigate }"
 						>

@@ -3,7 +3,7 @@
 		<template #default="{ close }">
 			<platform-loading :active="isLoading" />
 			<div class="campaign-dialog">
-				<platform-title title="Crear nueva campaña">
+				<platform-title title="Crear nuevo proyecto">
 					<template #actions>
 						<div class="d-flex gap-2">
 							<button type="button" class="btn btn-sm btn-secondary" @click="close">Cancelar</button>
@@ -13,7 +13,7 @@
 								:disabled="isLoading"
 								@click="submitForm"
 							>
-								{{ isLoading ? 'Creando...' : 'Crear Campaña' }}
+								{{ isLoading ? 'Creando...' : 'Crear Proyecto' }}
 							</button>
 						</div>
 					</template>
@@ -129,7 +129,7 @@
 				dialogRef.value.closeDialog();
 				chat.cleanStore();
 				// Navigate to the newly created campaign
-				await useRouter().push(`/dashboard/campaigns/${ res.data.value.data.id }`);
+				await useRouter().push(`/dashboard/projects/${ res.data.value.data.id }`);
 			}
 		} catch(error) {
 			console.error('Error creating campaign:', error);

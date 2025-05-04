@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-	useHead({ title: 'Campañas' });
+	useHead({ title: 'Proyectos' });
 </script>
 
 <!--suppress SassScssResolvedByNameOnly -->

@@ -31,7 +31,8 @@
 		}
 
 		// Navegar a la sección seleccionada
-		router.push(`/dashboard/campaigns/${ route.params.id }/${ currentSection.value }`);
+		router.push(`/dashboard/
+		projects/${ route.params.id }/${ currentSection.value }`);
 	};
 
 	// Watch for route changes and update select accordingly
@@ -48,7 +49,7 @@
 	// redirigir automáticamente a la ruta /overview para mantener sincronizada la URL con el selector
 	onMounted(() => {
 		if(!route.params.section) {
-			router.push(`/dashboard/campaigns/${ route.params.id }/overview`);
+			router.push(`/dashboard/projects/${ route.params.id }/overview`);
 		}
 	});
 </script>
