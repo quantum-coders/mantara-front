@@ -39,7 +39,7 @@
 	});
 
 	// Reactive relative time
-	const relativeTime = ref(timeAgo.format(new Date(props.message.created)));
+	const relativeTime = ref(timeAgo.format(new Date(props.message.createdAt)));
 
 	// Analizar las metas si están disponibles
 	const parsedMetas = computed(() => {

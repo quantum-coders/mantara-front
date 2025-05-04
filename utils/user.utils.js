@@ -1,5 +1,5 @@
 const getFullName = (user) => {
-	const nicename = `${ user.firstname || '' } ${ user.lastname || '' }`;
+	const nicename = `${ user.firstName || '' } ${ user.lastName || '' }`;
 	return nicename.trim() || 'No name';
 };
 

@@ -13,13 +13,13 @@ export const useChat = defineStore('chat', () => {
 	 * Fetches the chat and thread data from the server and sets up the chat store.
 	 *
 	 * @param {string} entity - The type of entity (e.g., 'campaign', 'agent').
-	 * @param {string|number|null} idEntity - The ID of the entity to associate with the chat.
+	 * @param {string|number|null} entityId - The ID of the entity to associate with the chat.
 	 * @returns {Promise<void>} A promise that resolves when the chat is initialized.
 	 */
-	const initChat = async (entity, idEntity) => {
+	const initChat = async (entity, entityId) => {
 		const { data, error } = await useBaseFetch('/users/me/chat', {
 			method: 'POST',
-			body: { entity, idEntity },
+			body: { entity, entityId },
 		});
 
 		if(error.value) {
@@ -56,6 +56,9 @@ export const useChat = defineStore('chat', () => {
 
 	const sendMessage = async (message) => {
 
+		console.log('message:', message);
+		console.log('chat:', chat.value);
+
 		// Create a message for assistant
 		const assistantMessage = addMessage({ role: 'assistant', text: '', loading: true });
 
@@ -74,7 +77,7 @@ export const useChat = defineStore('chat', () => {
 				url: url,
 				idChat: chat.value.id,
 				idThread: thread.value.id,
-				idCampaign: chat.value.idEntity,
+				idProject: chat.value.projectId,
 				agent: useAi().agent,
 				prompt: message,
 			},

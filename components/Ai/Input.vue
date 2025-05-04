@@ -17,6 +17,8 @@
 	const chat = useChat();
 
 	const addMessage = async () => {
+
+		console.log('addMessage', prompt.value);
 		if(prompt.value) {
 			chat.addMessage({
 				role: 'user',

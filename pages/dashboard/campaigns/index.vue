@@ -35,7 +35,7 @@
 	const loading = ref(false);
 
 	const fetchMyCampaigns = async () => {
-		const { data } = await useBaseFetch('/users/me/campaigns');
+		const { data } = await useBaseFetch('/users/me/projects');
 		return data.value.data;
 	};
 

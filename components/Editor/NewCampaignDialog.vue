@@ -21,7 +21,7 @@
 
 				<form @submit.prevent="submitForm" class="p-3">
 					<div class="form-group">
-						<platform-form-label for="name" label="Título de campaña" required />
+						<platform-form-label for="name" label="Título de proyecto" required />
 						<input
 							type="text"
 							id="name"
@@ -35,50 +35,7 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<platform-form-label for="client" label="Cliente" required />
-						<input
-							type="text"
-							id="client"
-							class="form-control"
-							:class="{ 'is-invalid': $v.client.$error }"
-							v-model="formData.client"
-							@blur="$v.client.$touch()"
-						/>
-						<div class="invalid-feedback" v-if="$v.client.$error">
-							{{ $v.client.$errors[0].$message }}
-						</div>
-					</div>
 
-					<div class="form-group">
-						<platform-form-label for="productService" label="Producto o servicio" required />
-						<input
-							type="text"
-							id="productService"
-							class="form-control"
-							:class="{ 'is-invalid': $v.productService.$error }"
-							v-model="formData.productService"
-							@blur="$v.productService.$touch()"
-						/>
-						<div class="invalid-feedback" v-if="$v.productService.$error">
-							{{ $v.productService.$errors[0].$message }}
-						</div>
-					</div>
-
-					<div class="form-group">
-						<platform-form-label for="description" label="Objetivo de la campaña" required />
-						<textarea
-							id="description"
-							class="form-control"
-							:class="{ 'is-invalid': $v.description.$error }"
-							v-model="formData.description"
-							rows="3"
-							@blur="$v.description.$touch()"
-						></textarea>
-						<div class="invalid-feedback" v-if="$v.description.$error">
-							{{ $v.description.$errors[0].$message }}
-						</div>
-					</div>
 				</form>
 			</div>
 		</template>
@@ -104,19 +61,11 @@
 	// Form data
 	const formData = reactive({
 		name: '',
-		client: '',
-		productService: '',
-		description: '',
 	});
 
 	// Custom error messages
 	const errorMessages = {
-		nameRequired: 'El título de la campaña es obligatorio',
-		nameMinLength: 'El título de la campaña debe tener al menos 3 caracteres',
-		clientRequired: 'El cliente es obligatorio',
-		productServiceRequired: 'El producto o servicio es obligatorio',
-		descriptionRequired: 'El objetivo de la campaña es obligatorio',
-		descriptionMinLength: 'El objetivo debe tener al menos 10 caracteres',
+		nameRequired: 'El título del proyecto es obligatorio'
 	};
 
 	// Create custom validators with error messages
@@ -124,9 +73,6 @@
 		(prop) => {
 			const fieldMap = {
 				name: errorMessages.nameRequired,
-				client: errorMessages.clientRequired,
-				productService: errorMessages.productServiceRequired,
-				description: errorMessages.descriptionRequired,
 			};
 			return fieldMap[prop.path] || 'Este campo es obligatorio';
 		},
@@ -143,16 +89,6 @@
 		name: {
 			required: customRequired,
 			minLength: customMinLength(3, 'nameMinLength'),
-		},
-		client: {
-			required: customRequired,
-		},
-		productService: {
-			required: customRequired,
-		},
-		description: {
-			required: customRequired,
-			minLength: customMinLength(10, 'descriptionMinLength'),
 		},
 	}));
 
@@ -178,13 +114,13 @@
 			};
 
 			// Call API to create campaign
-			const res = await useBaseFetch('/campaigns', {
+			const res = await useBaseFetch('/projects', {
 				method: 'POST',
 				body: submissionData,
 			});
 
 			if(res.error.value) {
-				usePrettyToast().error('Error al crear la campaña. Por favor, inténtalo de nuevo.');
+				usePrettyToast().error('Error al crear el proyecto. Por favor, inténtalo de nuevo.');
 			}
 
 			// Handle successful creation
