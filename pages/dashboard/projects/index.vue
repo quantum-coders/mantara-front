@@ -1,5 +1,5 @@
 <template>
-	<platform-title title="Mis Campañas" />
+	<platform-title title="Mis Proyectos" />
 	<section class="my-campaigns d-flex flex-column flex-grow-1">
 		<platform-loading :active="loading" />
 

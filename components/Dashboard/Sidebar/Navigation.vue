@@ -25,7 +25,7 @@
 	const navigation = [
 		{ to: '/dashboard', icon: 'hugeicons:dashboard-browsing', tooltip: 'Panel de control' },
 		{ to: '/dashboard/users', icon: 'hugeicons:user', tooltip: 'Usuarios' },
-		{ to: '/dashboard/campaigns', icon: 'hugeicons:warehouse', tooltip: 'Campañas' },
+		{ to: '/dashboard/projects', icon: 'hugeicons:warehouse', tooltip: 'Proyectos' },
 	];
 </script>
 
