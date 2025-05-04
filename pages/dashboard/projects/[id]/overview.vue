@@ -4,7 +4,7 @@
 
 <template>
 	<campaign-overview />
-	<campaign-budget />
+<!--	<campaign-budget />-->
 </template>
 
 <style scoped lang="sass">

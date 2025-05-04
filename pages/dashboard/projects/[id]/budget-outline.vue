@@ -1,3 +1,3 @@
 <template>
-	<campaign-budget />
+<!--	<campaign-budget />-->
 </template>

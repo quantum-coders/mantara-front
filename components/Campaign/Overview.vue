@@ -3,7 +3,7 @@
 		<div class="card border-0 bg-light mb-4">
 			<div class="row g-0">
 				<!-- Columna de imagen de portada -->
-				<div class="col-md-4 campaign-cover-container">
+<!--				<div class="col-md-4 campaign-cover-container">
 					<div v-if="campaign?.coverImage" class="h-100 position-relative">
 						<img
 							:src="campaign.coverImage" class="img-fluid rounded-start h-100 w-100 object-fit-cover"
@@ -24,10 +24,10 @@
 							<p class="mt-2">Sin imagen de portada</p>
 						</div>
 					</div>
-				</div>
+				</div>-->
 
 				<!-- Columna de información de la campaña -->
-				<div class="col-md-8">
+<!--				<div class="col-md-8">
 					<div class="card-body h-100 d-flex flex-column">
 						<div class="d-flex justify-content-between align-items-start mb-3">
 							<div>
@@ -93,7 +93,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 
@@ -177,7 +177,7 @@
 </template>
 <script setup>
 	const route = useRoute();
-	const campaignStore = useCampaign();
+	const campaignStore = useProject();
 	const editDialogRef = ref(null);
 	const isSaving = ref(false);
 

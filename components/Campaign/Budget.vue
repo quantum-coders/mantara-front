@@ -157,7 +157,7 @@
 
 <script setup>
 	const route = useRoute();
-	const campaignStore = useCampaign();
+	const campaignStore = useProject();
 	const isLoading = ref(true);
 	const isSaving = ref(false);
 	const editDialogRef = ref(null);
