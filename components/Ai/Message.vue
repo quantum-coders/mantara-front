@@ -125,7 +125,7 @@
 	onMounted(() => {
 		// Update the relative time every 30 seconds
 		intervalId = setInterval(() => {
-			relativeTime.value = timeAgo.format(new Date(props.message.created));
+			relativeTime.value = timeAgo.format(new Date(props.message.createdAt));
 		}, 30000);
 	});
 
